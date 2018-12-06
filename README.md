@@ -1,2 +1,1 @@
-# URC
-## Universal Reward Club
+# URC :: Universal Reward Club
