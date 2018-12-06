@@ -1,1 +1,2 @@
-# urc
+# URC
+## Universal Reward Club
