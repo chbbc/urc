@@ -10,9 +10,9 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>CPF:</ion-label>
-    <ion-input type="text" name="cpf" placeholder="CPF" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
+    <ion-input type="text" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
   </ion-item>
   <div>
-    <button ion-button block>Entrar</button>
+    <button ion-button full (click)="onRegisterCard()">Entrar</button>
   </div>
 </ion-content>
