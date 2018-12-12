@@ -19,15 +19,14 @@ export class LoginPage {
 
   public registerCardPage : any = RegisterCardPage;
 
+  public cpf : string = "100.262.104-60"; //change when use API
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
   onRegisterCard() {
-    this.navCtrl.setRoot(this.registerCardPage);
+    //call Login
+    this.navCtrl.setRoot(this.registerCardPage, {cpf : this.cpf});
   }
 
 }

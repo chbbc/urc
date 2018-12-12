@@ -19,12 +19,15 @@ export class RegisterCardPage {
 
   public homePage : any = HomePage;
 
+  //Dados do usuário
+  public cpf : string = "";
+  public number : string = "";
+  public name : string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
           public alertCtrl: AlertController) {
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterCardPage');
+          this.cpf = this.navParams.get('cpf');
   }
 
   onRegisterCard(){
@@ -32,17 +35,20 @@ export class RegisterCardPage {
       title: "Cadastre seu cartão",
       subTitle: "Cadastre o seu cartão de crédito para ganhar mais pontos",
       inputs: [{
-        name: "Nº do cartão de crédito",
+        name: "number",
         placeholder: "XXXX.XXXX.XXXX.XXXX",
         type: "number"
       }, {
-        name: "Nome escrito no cartão",
+        name: "name",
         placeholder: "Maria feliz de Souza",
         type: "text"
       }],
       buttons: [{
         text: "Cadastrar",
-        handler: () => {
+        handler: data => {
+          //call to register user credit card
+          this.number = data.number;
+          this.name = data.name;
           this.navCtrl.setRoot(this.homePage);
         }
       }, {

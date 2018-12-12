@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>CPF:</ion-label>
-    <ion-input type="text" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
+    <ion-input type="text" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}" [(ngModel)]="cpf"></ion-input>
   </ion-item>
   <div>
     <button ion-button full (click)="onRegisterCard()">Entrar</button>
