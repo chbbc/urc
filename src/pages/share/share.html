@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>share</ion-title>
+    <ion-title>Compartilhe URCs</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-item>
+        <ion-label floating>Conta:</ion-label>
+        <ion-input [(ngModel)]="conta"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Valor:</ion-label>
+        <ion-input [(ngModel)]="valor"></ion-input>
+      </ion-item>
+      <div padding>
+        <button ion-button full (click)="onShare()">Compartilhar</button>
+      </div>
 </ion-content>

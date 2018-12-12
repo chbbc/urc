@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SharePage {
 
+  public conta: string = "lalalala";
+  public valor : number = 100;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SharePage');
+  }
+
+  onShare() {
+    //sendo URCs tokens
   }
 
 }

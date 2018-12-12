@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { SharePage } from '../share/share';
+
 /**
  * Generated class for the MyAccountPage page.
  *
@@ -15,11 +17,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MyAccountPage {
 
+  public sharePage : any = SharePage;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    //get QR Code user
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyAccountPage');
+  onShare() {
+    this.navCtrl.push(this.sharePage);
   }
 
 }
