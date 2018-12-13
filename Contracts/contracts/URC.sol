@@ -8,39 +8,33 @@ contract URC is EIP20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     
-    string public user_uuid;                 // Único identificador do usuário
-    address public user_wallet;              // Carteira do usuário
+    string public user_uuid;            // Único identificador do usuário
+    address public user_wallet;         // Carteira do usuário
 
-    uint8 public decimals;                  // Quantidade de casas decimais
-    string public name;                     // Nome por extenso da moeda
-    string public symbol;                   // Símbolo
+    uint8 public decimals;              // Quantidade de casas decimais
+    string public name;                 // Nome por extenso da moeda
+    string public symbol;               // Símbolo
 
-    address creatorAddress;           // Endereço da carteira que é dona do contrato
+    address creatorAddress;             // Endereço da carteira que é dona do contrato
 
     modifier restricted() {
         if (msg.sender == creatorAddress) _;
     }
 
-    function URC() public {
+    constructor() public {
+        totalSupply = 0;
         decimals = 0;
         name = 'Universal Reward Club';
         symbol = 'URC';
         creatorAddress = msg.sender;
     }
-
+    
     function createTokens(address _receiver, uint256 _value) public restricted returns (bool success)  {
         totalSupply += _value;
         balances[_receiver] += _value;
         
         return true;
     }
-    
-    function burnTokens(uint256 _value) public restricted returns (bool success)  {
-        require (totalSupply >= _value);
-        totalSupply -= _value;
-
-        return true;
-    }  
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value);
