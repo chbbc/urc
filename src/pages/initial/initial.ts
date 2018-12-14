@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { SharePage } from '../share/share';
+import { LoginPage } from '../login/login';
 
 /**
- * Generated class for the MyAccountPage page.
+ * Generated class for the InitialPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,19 +12,20 @@ import { SharePage } from '../share/share';
 
 @IonicPage()
 @Component({
-  selector: 'page-my-account',
-  templateUrl: 'my-account.html',
+  selector: 'page-initial',
+  templateUrl: 'initial.html',
 })
-export class MyAccountPage {
+export class InitialPage {
 
-  public sharePage : any = SharePage;
+  public loginPage : any = LoginPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //get QR Code user
   }
 
-  onShare() {
-    this.navCtrl.push(this.sharePage);
+  ionViewDidLoad() { }
+
+  onAcess() {
+    this.navCtrl.push(this.loginPage);
   }
 
 }

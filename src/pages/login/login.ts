@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { RegisterCardPage } from '../register-card/register-card';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,16 +17,16 @@ import { RegisterCardPage } from '../register-card/register-card';
 })
 export class LoginPage {
 
-  public registerCardPage : any = RegisterCardPage;
+  public homePage : any = HomePage;
 
-  public cpf : string = "100.262.104-60"; //change when use API
+  public address : string = ""; //change when use API
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  onRegisterCard() {
+  onLogin() {
     //call Login
-    this.navCtrl.setRoot(this.registerCardPage, {cpf : this.cpf});
+    this.navCtrl.setRoot(this.homePage);
   }
 
 }
